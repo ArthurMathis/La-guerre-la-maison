@@ -1,0 +1,31 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--colorR);
+  overflow: hidden;
+}
+body section {
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
+body section aside {
+  display: flex;
+  height: 100%;
+}
+body section aside:first-child {
+  padding-right: 1%;
+}
+body section aside:last-child {
+  padding-left: 1%;
+}
+body section aside article {
+  height: 100%;
+}
+body section aside article img {
+  height: 100%;
+  width: 96%;
+  padding: 0 2%;
+}
+
+/*# sourceMappingURL=main.css.map */
