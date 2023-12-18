@@ -1,31 +1,73 @@
+* {
+  display: block;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   width: 100vw;
   height: 100vh;
-  background-color: var(--colorR);
+  background-color: var(--colorBg);
   overflow: hidden;
 }
 body section {
   display: flex;
-  width: 100%;
-  height: 50%;
+  justify-content: space-between;
+  width: 100vw;
+  height: 51vh;
 }
-body section aside {
+body section article {
   display: flex;
   height: 100%;
 }
-body section aside:first-child {
-  padding-right: 1%;
-}
-body section aside:last-child {
-  padding-left: 1%;
-}
-body section aside article {
+body section article img {
   height: 100%;
+  padding: 0 0.3%;
 }
-body section aside article img {
-  height: 100%;
-  width: 96%;
-  padding: 0 2%;
+body section article img:first-of-type {
+  padding: 0 0.3% 0 0;
+}
+body section article img:last-of-type {
+  padding: 0 0 0 0.3%;
+}
+body section:first-of-type {
+  margin-bottom: 1%;
+}
+
+#lHaut article img {
+  width: 11vw;
+}
+
+#lBas article img {
+  width: 6.5vw;
+}
+
+#grain {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.6;
+  background-image: url("../assets/img/grain.jpg");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: color-burn;
+}
+
+#msgBox {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: clamp(640px, 75%, 980px);
+  height: clamp(320px, 65%, 640px);
+  transform: translateX(-50%) translateY(-50%);
+  background-color: var(--colorMain);
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
