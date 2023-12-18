@@ -70,4 +70,42 @@ body section:first-of-type {
   display: none;
 }
 
+.annotation {
+  position: fixed;
+  max-width: 10em;
+  font-family: "Roboto";
+  color: var(--colorMain);
+  font-size: 1em;
+  font-weight: 100;
+}
+.annotation:first-of-type {
+  top: 24.3%;
+  left: 23.7%;
+  filter: blur(0.65px);
+}
+.annotation:nth-of-type(2) {
+  text-align: right;
+  max-width: 15em;
+  top: 2.5%;
+  right: 2.5%;
+  filter: blur(0.3px);
+}
+.annotation:nth-of-type(3) {
+  max-width: 13em;
+  top: 88.3%;
+  left: 53.2%;
+  filter: blur(0.35px);
+}
+.annotation:nth-of-type(4) {
+  max-width: 14em;
+  top: 55%;
+  left: 2.5%;
+}
+.annotation:nth-of-type(5) {
+  max-width: 15em;
+  top: 43.3%;
+  left: 72.2%;
+  filter: blur(0.8px);
+}
+
 /*# sourceMappingURL=main.css.map */
