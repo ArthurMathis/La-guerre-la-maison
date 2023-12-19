@@ -24,14 +24,16 @@ body section article {
 body section article img {
   height: 100%;
   padding: 0 0.3%;
-  will-change: opacity;
-  transition: opacity 0.25s;
 }
 body section article img:first-of-type {
   padding: 0 0.3% 0 0;
 }
 body section article img:last-of-type {
   padding: 0 0 0 0.3%;
+}
+body section article .annecdote {
+  will-change: opacity;
+  transition: opacity 0.25s;
 }
 body section:first-of-type {
   margin-bottom: 1%;
@@ -76,18 +78,39 @@ body section:first-of-type {
 }
 
 #msgBox {
-  content: "";
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: clamp(640px, 75%, 980px);
-  height: clamp(320px, 65%, 640px);
-  transform: translateX(-50%) translateY(-50%);
-  background-color: var(--colorMain);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  will-change: height;
+  transition: height 0.25s;
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+}
+#msgBox #Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   will-change: opacity;
   transition: opacity 0.25s;
-  z-index: 100;
+  border-radius: 1.5vw;
+  width: clamp(640px, 75%, 980px);
+  height: clamp(320px, 65%, 640px);
+  background-color: var(--colorMain);
+}
+#msgBox #Box img {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translateX(50%) translateY(-50%);
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
 }
 
 .annotation {
@@ -106,8 +129,8 @@ body section:first-of-type {
 .annotation:nth-of-type(2) {
   text-align: right;
   max-width: 15em;
-  top: 2.5%;
-  right: 2.5%;
+  top: 1.5%;
+  right: 12.5%;
   filter: blur(0.3px);
 }
 .annotation:nth-of-type(3) {
@@ -117,14 +140,14 @@ body section:first-of-type {
   filter: blur(0.35px);
 }
 .annotation:nth-of-type(4) {
-  max-width: 14em;
+  max-width: 12em;
   top: 55%;
-  left: 2.5%;
+  left: 1%;
 }
 .annotation:nth-of-type(5) {
   max-width: 15em;
-  top: 43.3%;
-  left: 72.2%;
+  top: 39.3%;
+  left: 61.2%;
   filter: blur(0.8px);
 }
 
