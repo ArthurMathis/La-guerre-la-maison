@@ -99,9 +99,15 @@ body section:first-of-type {
   will-change: opacity;
   transition: opacity 0.25s;
   border-radius: 1.5vw;
-  width: clamp(640px, 75%, 980px);
-  height: clamp(320px, 65%, 640px);
-  background-color: var(--colorMain);
+  width: 75%;
+  height: 65%;
+  /*background-color: var(--colorMain);*/
+}
+#msgBox #Box p {
+  font-family: "Courier Prime";
+  font-size: 1em;
+  color: var(--colorMain);
+  background-color: var(--colorBg);
 }
 #msgBox #Box img {
   position: absolute;

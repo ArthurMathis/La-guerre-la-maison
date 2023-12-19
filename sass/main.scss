@@ -131,10 +131,17 @@ body{
 
         border-radius: 1.5vw;
 
-        width: clamp(640px, 75%, 980px);
-        height: clamp(320px, 65%, 640px);
+        width: 75%;
+        height: 65%;
 
-        background-color: var(--colorMain);
+        /*background-color: var(--colorMain);*/
+
+        & p{
+            font-family: 'Courier Prime';
+            font-size: 1em;
+            color: var(--colorMain);
+            background-color: var(--colorBg);
+        }
 
         & img{
             position: absolute;
