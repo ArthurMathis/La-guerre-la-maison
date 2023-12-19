@@ -136,22 +136,30 @@ body{
 
         /*background-color: var(--colorMain);*/
 
-        & p{
-            font-family: 'Courier Prime';
-            font-size: 1em;
-            color: var(--colorMain);
-            background-color: var(--colorBg);
+        & > div {
+            height: 50%;
+            max-width: 50%;
+            margin-right: 5px;
+
+            & p{
+                font-family: 'Courier Prime';
+                font-size: 1em;
+                color: var(--colorMain);
+                background-color: var(--colorBg);
+                
+                margin: 5px 0;
+
+                &:first-of-type{
+                    margin: 0 0 5px 0 ;
+                }
+            }
         }
 
         & img{
-            position: absolute;
-            top: 50%;
-            right: 50%;
-            transform: translateX(50%) translateY(-50%);
-
-            width: 50%;
             height: 50%;
             object-fit: cover;
+
+            margin-left: 5px;
         }
     }
 }

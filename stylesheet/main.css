@@ -103,20 +103,25 @@ body section:first-of-type {
   height: 65%;
   /*background-color: var(--colorMain);*/
 }
-#msgBox #Box p {
+#msgBox #Box > div {
+  height: 50%;
+  max-width: 50%;
+  margin-right: 5px;
+}
+#msgBox #Box > div p {
   font-family: "Courier Prime";
   font-size: 1em;
   color: var(--colorMain);
   background-color: var(--colorBg);
+  margin: 5px 0;
+}
+#msgBox #Box > div p:first-of-type {
+  margin: 0 0 5px 0;
 }
 #msgBox #Box img {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translateX(50%) translateY(-50%);
-  width: 50%;
   height: 50%;
   object-fit: cover;
+  margin-left: 5px;
 }
 
 .annotation {
