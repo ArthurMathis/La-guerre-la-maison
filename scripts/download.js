@@ -16,6 +16,7 @@ preloadResources().then(() => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    updateCounter();
     preloadResources()
         .then(() => {
             console.log('Toutes les ressources ont été chargées !');
@@ -28,8 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function preloadResources() {
     let promises = [];
-    let totalResources = resourcesToPreload.length;
-    let loadedResources = 0;
 
     resourcesToPreload.forEach(resource => {
         let promise;
@@ -41,11 +40,7 @@ function preloadResources() {
                 styleElement.href = resource.url;
                 document.head.appendChild(styleElement);
                 promise = new Promise(resolve => {
-                    styleElement.onload = () => {
-                        loadedResources++;
-                        updateProgress(loadedResources, totalResources);
-                        resolve();
-                    };
+                    styleElement.onload = resolve;
                 });
                 break;
 
@@ -55,11 +50,7 @@ function preloadResources() {
                 scriptElement.src = resource.url;
                 document.head.appendChild(scriptElement);
                 promise = new Promise(resolve => {
-                    scriptElement.onload = () => {
-                        loadedResources++;
-                        updateProgress(loadedResources, totalResources);
-                        resolve();
-                    };
+                    scriptElement.onload = resolve;
                 });
                 break;
 
@@ -67,16 +58,8 @@ function preloadResources() {
                 promise = new Promise((resolve, reject) => {
                     let img = new Image();
                     img.src = resource.url;
-                    img.onload = () => {
-                        loadedResources++;
-                        updateProgress(loadedResources, totalResources);
-                        resolve();
-                    };
-                    img.onerror = () => {
-                        loadedResources++;
-                        updateProgress(loadedResources, totalResources);
-                        reject();
-                    };
+                    img.onload = resolve;
+                    img.onerror = reject;
                 });
                 break;
 
@@ -91,12 +74,21 @@ function preloadResources() {
     return Promise.all(promises);
 }
 
-function updateProgress(loaded, total) {
-    let percentage = Math.floor((loaded / total) * 100);
-    let compteurElement = document.getElementById('compteur');
-    if (compteurElement) {
-        compteurElement.textContent = `${percentage}%`;
-    } else {
-        console.error('Balise compteur non trouvée.');
+let compteurElement = document.getElementById('compteur');
+let currentValue = 0;
+
+function updateCounter() {
+    if (currentValue === 100) {
+        return;
     }
+    currentValue += Math.floor(Math.random() * 10) + 1;
+
+    if (currentValue > 100) {
+        currentValue = 100;
+    }
+
+    compteurElement.textContent = currentValue + "%";
+
+    let delay = Math.floor(Math.random() * 200) + 17;
+    setTimeout(updateCounter, delay);
 }

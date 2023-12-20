@@ -142,6 +142,7 @@ body{
             margin-right: 5px;
 
             & p{
+                display: inline;
                 font-family: 'Courier Prime';
                 font-size: 1.2em;
                 color: var(--colorMain);

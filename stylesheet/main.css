@@ -109,6 +109,7 @@ body section:first-of-type {
   margin-right: 5px;
 }
 #msgBox #Box > div p {
+  display: inline;
   font-family: "Courier Prime";
   font-size: 1.2em;
   color: var(--colorMain);
