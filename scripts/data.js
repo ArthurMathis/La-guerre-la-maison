@@ -25,30 +25,41 @@ class annecdote{
     }
 }
 
+const a1 = new annecdote("assets/img/Russian prisoners in a gulag (1).jpg",
+    "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit doloremque, molestiae ducimus quod quos blanditiis magnam atque error reiciendis debitis? Magnam perspiciatis tempora fugit! Quaerat obcaecati delectus vel velit. Corporis!</p>" 
+);
+const a2 = new annecdote("assets/img/Russian prisoners in a gulag (1).jpg",
+    "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit doloremque, molestiae ducimus quod quos blanditiis magnam atque error reiciendis debitis? Magnam perspiciatis tempora fugit! Quaerat obcaecati delectus vel velit. Corporis!</p>" 
+);
+const a3 = new annecdote("assets/img/Russian prisoners in a gulag (1).jpg",
+    "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit doloremque, molestiae ducimus quod quos blanditiis magnam atque error reiciendis debitis? Magnam perspiciatis tempora fugit! Quaerat obcaecati delectus vel velit. Corporis!</p>" 
+);
+const a4 = new annecdote("assets/img/Russian prisoners in a gulag (1).jpg",
+    "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit doloremque, molestiae ducimus quod quos blanditiis magnam atque error reiciendis debitis? Magnam perspiciatis tempora fugit! Quaerat obcaecati delectus vel velit. Corporis!</p>" 
+);
+const a5 = new annecdote("assets/img/Russian prisoners in a gulag (1).jpg",
+    "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit doloremque, molestiae ducimus quod quos blanditiis magnam atque error reiciendis debitis? Magnam perspiciatis tempora fugit! Quaerat obcaecati delectus vel velit. Corporis!</p>" 
+);
+const a6 = new annecdote("assets/img/Russian prisoners in a gulag (1).jpg",
+    "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit doloremque, molestiae ducimus quod quos blanditiis magnam atque error reiciendis debitis? Magnam perspiciatis tempora fugit! Quaerat obcaecati delectus vel velit. Corporis!</p>" 
+);
+const a7 = new annecdote("assets/img/Russian prisoners in a gulag (1).jpg",
+    "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit doloremque, molestiae ducimus quod quos blanditiis magnam atque error reiciendis debitis? Magnam perspiciatis tempora fugit! Quaerat obcaecati delectus vel velit. Corporis!</p>" 
+);
+const a8 = new annecdote("assets/img/Russian prisoners in a gulag (1).jpg",
+    "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit doloremque, molestiae ducimus quod quos blanditiis magnam atque error reiciendis debitis? Magnam perspiciatis tempora fugit! Quaerat obcaecati delectus vel velit. Corporis!</p>" 
+);
+
 class gestionnaireAnnecdotes{
-    constructor(src){
-        this.annecdotes = [];
-        this.fetchDataFromJson(src);
+    constructor(){
+        this.annecdotes = [a1,a2,a3,a4,a5,a6,a7,a8];
     }
 
     getAnnecdote(i){
         return this.annecdotes[i];
     }
 
-    async fetchDataFromJson(jsonFilePath){
-        try{
-            const file = await fetch(jsonFilePath);
-            const data = await file.json(); 
-            if(Array.isArray(data)){
-                this.annecdotes = data.map(
-                    c => new annecdote(c.img, c.msg)
-                );
-                console.log('Questions téléchargées avec succès:', this.annecdotes);
-            } else {
-                console.error('Le fichier JSON ne contient pas un tableau valide.');
-            }
-        } catch(error){
-            console.error('Une erreur esr survenue lors du chargement des annecodtes:', error);
-        }
+    getGestionnaire(){
+        return this;
     }
 }

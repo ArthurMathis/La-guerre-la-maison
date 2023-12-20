@@ -3,7 +3,7 @@ const msgBox = document.getElementById('msgBox');
 const Box = document.getElementById('Box');
 const annecdotes = document.querySelectorAll('.annotation');
 
-const gest = new gestionnaireAnnecdotes('assets/data.json');
+const gest = new gestionnaireAnnecdotes();
 
 function affiche(obj){
     // On ajoute à Box le contenu html de obj 
