@@ -26,19 +26,24 @@ function remove(){
 }
 
 function isOn(c, i){
-    // On récupère et envoie les données dans la fonction d'affichage 
-    affiche(gest.getAnnecdote(i));
-
-    // On efface la lettre survolée
-    c.style.opacity = '0';
-    // On efface les textes survolant msgBox
-    removeFantome();
-    // On recule les lettres afin de les flouter
-    letters.forEach(obj => {
-        if(obj !== c){
-            obj.style.zIndex = '-10';
-        }
-    });
+    if(c == undefined || i > gest.length){
+        console.log('Objet introubale !');
+    } else if(i === 4){
+        showGalerie();
+    } else {
+        // On récupère et envoie les données dans la fonction d'affichage 
+        affiche(gest.getAnnecdote(i));
+        // On efface la lettre survolée
+        c.style.opacity = '0';
+        // On efface les textes survolant msgBox
+        removeFantome();
+        // On recule les lettres afin de les flouter
+        letters.forEach(obj => {
+            if(obj !== c){
+                obj.style.zIndex = '-10';
+            }
+        });
+    }
 }
 
 function isOf(element) {
