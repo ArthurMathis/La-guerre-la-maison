@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--colorR);
+
+    & #image{
+        display: block;
+        width: 65%;
+        max-height: 85%;
+    }
+}
+
+#compteur{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+
+    color: var(--colorMain);
+    font-size: 3em;
+    font-family: 'Courier Prime';
+}
