@@ -32,7 +32,7 @@ function isOn(c, i){
         showGalerie();
     } else {
         // On récupère et envoie les données dans la fonction d'affichage 
-        affiche(gest.getAnnecdote(i));
+        affiche(gest.getAnnecdote(i < 4 ? i : i-1));
         // On efface la lettre survolée
         c.style.opacity = '0';
         // On efface les textes survolant msgBox

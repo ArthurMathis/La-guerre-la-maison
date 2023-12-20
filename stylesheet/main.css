@@ -188,6 +188,11 @@ body section:first-of-type {
   border-radius: calc(var(--sizeButton) / 2);
   background-color: black;
   transform: translateX(-50%);
+  will-change: transform;
+  transition: 0.25s transform;
+}
+#galerie #menu-icon:hover {
+  transform: translateX(-50%) scale(1.1);
 }
 #galerie #menu-icon span {
   position: absolute;
