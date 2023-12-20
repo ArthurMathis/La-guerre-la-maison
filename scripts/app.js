@@ -3,57 +3,52 @@ const msgBox = document.getElementById('msgBox');
 const Box = document.getElementById('Box');
 const annecdotes = document.querySelectorAll('.annotation');
 
-const p = ['J’ai perdu mon ex, elle est partie il y a quelque années. Elle me trouvait trop toxique. Alors moi je me sent seul et j’ai l’impression d’avoir perdu l’emprise que j’avais sur elle (c’était pourtant bien agréable). J’avais un peut de temps a perdre alors j’ai décidé l’obliger de rester avec moi. Je suis le plus fort alors elle doit se plier a ma volonté c’est comme ça que fonctionne la vie. Mes amis m’ont conseillé de la respecter mais j’en ai rien a foutre de ce qu’ils pensent !', 'L’objectif de Vladimir Poutine est d’intervenir en reconstruisant l’ancien espace soviétique.  L’Ukraine et la plus grande partie ce territoire ce qui explique que le conflit se soit déclenché a cause de celui-ci. Sont projet et donc la reconstitution de la zone d’influence de l’ancien espace soviétique et comme les pays satellites ont été rattachés a l’autan Poutine en a eu marre et souhaite que cela s’arrête.'];
-const img = 'assets/img/1.jpg';
+const gest = new gestionnaireAnnecdotes('assets/data.json');
 
-function addParagrahe(msg){
-    return '<p>' + msg + '</p>';
-}
-
-function addImage(img){
-    return "<img src=\"" + img + "\">";
-}
-
-function addTexte(p){
-    let res = '<div>';
-    p.forEach(c => {
-        res += addParagrahe(c);
-    });
-    res += '</div>'
-    return res;
-}
-
-function affiche(msg, img){
-    const c = addTexte(msg) + addImage(img);
-    console.log(c);
-    Box.innerHTML = c;
+function affiche(obj){
+    // On ajoute à Box le contenu html de obj 
+    Box.innerHTML = obj.createElement();
+    // On applique le display flex à msgBox
     msgBox.style.display = 'flex';
+    // On fait apparaitre en transition Box
     setTimeout(function() {
         Box.style.opacity = '1';
     }, 1);
 }
 
 function remove(){
+    // On supprime le display de Box
     msgBox.style.display = 'none';
+    // On efface Box
     Box.style.opacity = "0";
+    // On vide Box de son contenu
     Box.innerHTML = '';
 }
 
-function isOn(element) {
-    affiche(p, img);
-    element.style.opacity = '0';
+function isOn(c, i){
+    // On récupère et envoie les données dans la fonction d'affichage 
+    affiche(gest.getAnnecdote(i));
+
+    // On efface la lettre survolée
+    c.style.opacity = '0';
+    // On efface les textes survolant msgBox
     removeFantome();
-    letters.forEach(c => {
-        if(c !== element){
-            c.style.zIndex = '-10';
+    // On recule les lettres afin de les flouter
+    letters.forEach(obj => {
+        if(obj !== c){
+            obj.style.zIndex = '-10';
         }
     });
 }
 
 function isOf(element) {
+    // On efface MsgBox et Box
     remove();
+    // On affiche les textes genant l'affichage de Box 
     afficheFantome();
+    // On raffiche l'élément
     element.style.opacity = '1';
+    // On fait remonter les lettres
     letters.forEach(c => {
         c.style.zIndex = 'auto';
     });
@@ -63,18 +58,20 @@ function init() {
     remove();
     setTimeout(() => {
         for (let i = 0; i < letters.length; i++) {
-            letters[i].addEventListener('mouseenter', (event) => { isOn(event.target); });
+            letters[i].addEventListener('mouseenter', (event) => { isOn(event.target, i); });
             letters[i].addEventListener('mouseleave', (event) => { isOf(event.target); });
         }
     }, 4000); 
 }
 
 function afficheFantome(){
+    // On fait apparaitre les textes 0 et 4
     annecdotes[0].style.opacity = '1';
     annecdotes[4].style.opacity = '1';
 }
 
 function removeFantome(){
+    // On fait disparaitre les textes 0 et 4
     annecdotes[0].style.opacity = '0';
     annecdotes[4].style.opacity = '0';
 }
