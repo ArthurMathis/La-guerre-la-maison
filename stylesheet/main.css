@@ -22,6 +22,7 @@ body section article {
   height: 100%;
 }
 body section article img {
+  opacity: 0;
   height: 100%;
   padding: 0 0.3%;
 }
@@ -101,7 +102,6 @@ body section:first-of-type {
   border-radius: 1.5vw;
   width: 75%;
   height: 65%;
-  /*background-color: var(--colorMain);*/
 }
 #msgBox #Box > div {
   height: 50%;
@@ -132,6 +132,7 @@ body section:first-of-type {
   color: var(--colorMain);
   font-size: 1em;
   font-weight: 100;
+  opacity: 0;
 }
 .annotation:first-of-type {
   top: 24.3%;
@@ -161,6 +162,25 @@ body section:first-of-type {
   top: 39.3%;
   left: 61.2%;
   filter: blur(0.8px);
+}
+
+@keyframes reduction {
+  from {
+    height: 100vh;
+  }
+  to {
+    height: 0;
+  }
+}
+#rideau {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: var(--colorR);
+  z-index: 1000;
+  will-change: height;
+  animation: reduction 1s forwards;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -22,12 +22,13 @@ body{
         width: 100vw;
         height: 51vh;
 
-        & article{
+        & article {
             display: flex;
 
             height: 100%;
 
             & img{
+                opacity: 0;
                 height: 100%;
                 padding: 0 0.3%;
 
@@ -134,8 +135,6 @@ body{
         width: 75%;
         height: 65%;
 
-        /*background-color: var(--colorMain);*/
-
         & > div {
             height: 50%;
             max-width: 50%;
@@ -175,6 +174,8 @@ body{
     font-size: 1em;
     font-weight: 100;
 
+    opacity: 0;
+
     &:first-of-type{
         top: 24.3%;
         left: 23.7%;
@@ -208,5 +209,28 @@ body{
         left: 61.2%;
         filter: blur(0.8px);
     }
-
 }
+
+@keyframes reduction{
+    from {
+        height: 100vh;
+    } to {
+        height: 0;
+    }
+}
+
+#rideau{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+
+    background-color: var(--colorR);
+
+    z-index: 1000;
+
+    will-change: height;
+    animation: reduction 1s forwards;
+}
+
