@@ -8,7 +8,7 @@ let startTime = Date.now();
 preloadResources().then(() => {
     let endTime = Date.now();
     let elapsedTime = endTime - startTime;
-    let delay = Math.max(2000 - elapsedTime, 0);
+    let delay = Math.max(3000 - elapsedTime, 0);
 
     setTimeout(() => {
         window.location.href = 'main.html';
@@ -89,6 +89,6 @@ function updateCounter() {
 
     compteurElement.textContent = currentValue + "%";
 
-    let delay = Math.floor(Math.random() * 200) + 17;
+    let delay = Math.floor(Math.random() * 100) + 115;
     setTimeout(updateCounter, delay);
 }

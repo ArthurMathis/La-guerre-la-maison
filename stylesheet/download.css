@@ -8,20 +8,109 @@ body {
   padding: 0;
   background-color: var(--colorR);
 }
-body #image {
-  display: block;
-  width: 65%;
-  max-height: 85%;
+
+:root {
+  --img: 40vw;
 }
 
 #compteur {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  bottom: 1%;
+  right: 1%;
   transform: translateX(-50%) translateY(-50%);
-  color: var(--colorMain);
-  font-size: 3em;
+  color: var(--colorBg);
+  font-size: 3.5em;
   font-family: "Courier Prime";
+}
+
+img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: var(--img);
+  height: var(--img);
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.imggen {
+  z-index: 940;
+  animation: display 0s forwards 0.2s;
+}
+
+.imggen1 {
+  z-index: 930;
+  animation: display 0s forwards 0.4s;
+}
+
+.imggen2 {
+  z-index: 920;
+  animation: display 0s forwards 0.6s;
+}
+
+.imggen3 {
+  z-index: 910;
+  animation: display 0s forwards 0.8s;
+}
+
+.imggen4 {
+  z-index: 900;
+  animation: display 0s forwards 1s;
+}
+
+.imggen5 {
+  z-index: 890;
+  animation: display 0s forwards 1.2s;
+}
+
+.imggen6 {
+  z-index: 880;
+  animation: display 0s forwards 1.4s;
+}
+
+.imggen7 {
+  z-index: 870;
+  animation: display 0s forwards 1.6s;
+}
+
+.imggen8 {
+  z-index: 860;
+  animation: display 0s forwards 1.8s;
+}
+
+.imggen9 {
+  z-index: 850;
+  animation: display 0s forwards 2s;
+}
+
+.imggen10 {
+  z-index: 840;
+  animation: display 0s forwards 2.2s;
+}
+
+.imggen11 {
+  z-index: 830;
+  animation: display 0s forwards 2.4s;
+}
+
+.imggen12 {
+  z-index: 820;
+  animation: display 0s forwards 2.6s;
+}
+
+.imggen13 {
+  z-index: 810;
+  animation: display 0s forwards 2.8s;
+}
+
+@keyframes display {
+  from {
+    display: block;
+  }
+  to {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=download.css.map */

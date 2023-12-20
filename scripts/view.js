@@ -24,5 +24,23 @@ function apparitionProgressiveAnnecdotes() {
         });
     }, 1000); 
 }
+
+function showGalerie(){
+    document.getElementById('galerie').style.top = '0'; 
+    setTimeout(() => {
+        document.getElementById('galerie').style.backdropFilter = 'blur(15px)';
+        let c = document.getElementById('menu-icon');
+        c.style.display = 'block'
+        c.addEventListener('click', () => { 
+            hideGalerie(); 
+        });
+    }, 1000); 
+}
+
+function hideGalerie(){
+    document.getElementById('galerie').style.top = '100vh'; 
+    document.getElementById('galerie').style.backdropFilter = 'none';
+    document.getElementById('menu-icon').style.display = 'none';
+}
   
 window.addEventListener('load', apparitionProgressiveImages);
