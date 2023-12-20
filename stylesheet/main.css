@@ -60,7 +60,7 @@ body section:first-of-type {
   will-change: height;
   transition: height 0.25s;
   background-color: transparent;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(var(--flou));
 }
 #msgBox #Box {
   display: flex;
@@ -74,7 +74,7 @@ body section:first-of-type {
   height: 65%;
 }
 #msgBox #Box > div {
-  height: 50%;
+  height: 75%;
   max-width: 50%;
   margin-right: 5px;
 }
@@ -90,7 +90,7 @@ body section:first-of-type {
   margin: 0 0 5px 0;
 }
 #msgBox #Box img {
-  height: 50%;
+  height: 75%;
   object-fit: cover;
   margin-left: 5px;
 }
@@ -168,15 +168,15 @@ body section:first-of-type {
 #galerie content {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25%;
+  gap: 1%;
   overflow-y: scroll;
   width: 70%;
   height: 100%;
 }
 #galerie content img {
-  width: 32.5%;
-  margin-top: 0.25%;
-  margin-bottom: 0.25%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
 }
 #galerie #menu-icon {
   position: fixed;

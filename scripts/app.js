@@ -29,6 +29,7 @@ function isOn(c, i){
     if(c == undefined || i > gest.length){
         console.log('Objet introubale !');
     } else if(i === 4){
+        c.style.opacity = '0';
         showGalerie();
     } else {
         // On récupère et envoie les données dans la fonction d'affichage 

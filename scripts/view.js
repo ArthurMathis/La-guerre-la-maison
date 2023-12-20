@@ -28,7 +28,7 @@ function apparitionProgressiveAnnecdotes() {
 function showGalerie(){
     document.getElementById('galerie').style.top = '0'; 
     setTimeout(() => {
-        document.getElementById('galerie').style.backdropFilter = 'blur(15px)';
+        document.getElementById('galerie').style.backdropFilter = 'blur(10px)';
         let c = document.getElementById('menu-icon');
         c.style.display = 'block'
         c.addEventListener('click', () => { 
