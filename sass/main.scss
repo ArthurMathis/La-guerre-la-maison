@@ -229,6 +229,10 @@ body{
             height: 20vw;
 
             object-fit: cover;
+
+            opacity: 0;
+            will-change: opacity;
+            transition: opacity 0.5s;
         }
     }
 

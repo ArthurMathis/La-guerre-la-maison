@@ -177,6 +177,9 @@ body section:first-of-type {
   width: 20vw;
   height: 20vw;
   object-fit: cover;
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 0.5s;
 }
 #galerie #menu-icon {
   position: fixed;
