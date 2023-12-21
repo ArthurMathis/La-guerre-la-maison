@@ -65,12 +65,15 @@ const observer = new IntersectionObserver(entries => {
     });
 }, options);
 
-function init(){
+function initView(){
     images.forEach(image => {
         observer.observe(image);
         console.log(image);
     });
     apparitionProgressiveImages();
+    setTimeout(() => {
+        apparitionProgressiveAnnecdotes();
+    }, 2000);
 }
 
-window.addEventListener('load', init);
+window.addEventListener('load', initView);

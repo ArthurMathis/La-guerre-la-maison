@@ -82,4 +82,4 @@ function removeFantome(){
     annecdotes[4].style.opacity = '0';
 }
 
-document.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', init);
