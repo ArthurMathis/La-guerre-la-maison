@@ -29,5 +29,9 @@
   font-family: "Roboto";
   src: url("../assets/typo/RobotoFlex-VariableFont_GRAD,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf");
 }
+@font-face {
+  font-family: "bebas_Neue";
+  src: url("../assets/typo/Bebas_Neue/BebasNeue-Regular.ttf");
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -70,24 +70,36 @@ body section:first-of-type {
   will-change: opacity;
   transition: opacity 0.25s;
   border-radius: 1.5vw;
-  width: 75%;
-  height: 65%;
+  width: 90%;
+  height: 85%;
 }
 #msgBox #Box > div {
   height: 75%;
   max-width: 50%;
   margin-right: 5px;
 }
-#msgBox #Box > div p {
-  display: inline;
-  font-family: "Courier Prime";
-  font-size: 1.2em;
+#msgBox #Box > div:first-child {
+  margin: none;
+}
+#msgBox #Box > div h2, #msgBox #Box > div h3, #msgBox #Box > div p {
+  font-family: "bebas_Neue";
   color: var(--colorMain);
   background-color: var(--colorBg);
   margin: 5px 0;
 }
-#msgBox #Box > div p:first-of-type {
-  margin: 0 0 5px 0;
+#msgBox #Box > div h2, #msgBox #Box > div h3 {
+  display: inline;
+}
+#msgBox #Box > div h2 {
+  font-size: 4em;
+}
+#msgBox #Box > div h3 {
+  font-size: 2em;
+}
+#msgBox #Box > div p {
+  display: inline-block;
+  font-family: "Courier Prime";
+  font-size: 1em;
 }
 #msgBox #Box img {
   height: 75%;
@@ -168,6 +180,7 @@ body section:first-of-type {
 #galerie content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1%;
   overflow-y: scroll;
   width: 70%;
@@ -189,7 +202,7 @@ body section:first-of-type {
   width: var(--sizeButton);
   height: var(--sizeButton);
   border-radius: calc(var(--sizeButton) / 2);
-  background-color: black;
+  background-color: var(--colorR);
   transform: translateX(-50%);
   will-change: transform;
   transition: 0.25s transform;
@@ -213,7 +226,7 @@ body section:first-of-type {
   display: block;
   width: calc(var(--sizeButton) - 10px);
   height: 3px;
-  background-color: var(--colorR);
+  background-color: var(--colorBg);
 }
 #galerie #menu-icon span::before {
   transform: translateY(-6px);

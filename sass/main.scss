@@ -95,26 +95,41 @@ body{
 
         border-radius: 1.5vw;
 
-        width: 75%;
-        height: 65%;
+        width: 90%;
+        height: 85%;
 
         & > div {
             height: 75%;
             max-width: 50%;
             margin-right: 5px;
 
-            & p{
-                display: inline;
-                font-family: 'Courier Prime';
-                font-size: 1.2em;
+            &:first-child{
+                margin: none;
+            }
+
+            & h2, h3, p{
+                font-family: 'bebas_Neue';
                 color: var(--colorMain);
                 background-color: var(--colorBg);
-            
                 margin: 5px 0;
+            }
 
-                &:first-of-type{
-                    margin: 0 0 5px 0 ;
-                }
+            & h2, h3{
+                display: inline;
+            }
+
+            & h2{
+                font-size: 4em;
+            }
+
+            & h3{
+                font-size: 2em;
+            }
+
+            & p{
+                display: inline-block;
+                font-family: 'Courier Prime';
+                font-size: 1em;
             }
         }
 
@@ -217,12 +232,14 @@ body{
     & content{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 1%;
         
         overflow-y: scroll;
 
         width: 70%;
         height: 100%;
+
 
         & img{
             width: 20vw;
@@ -247,7 +264,7 @@ body{
         height: var(--sizeButton);
         border-radius: calc(var(--sizeButton) / 2.0);
 
-        background-color: black;
+        background-color: var(--colorR);
 
         transform: translateX(-50%);
 
@@ -278,7 +295,7 @@ body{
                 width: calc(var(--sizeButton) - 10px);
                 height: 3px;
         
-                background-color: var(--colorR);
+                background-color: var(--colorBg);
             }
     
             &::before{

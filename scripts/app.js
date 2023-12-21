@@ -8,6 +8,9 @@ const gest = new gestionnaireAnnecdotes();
 function affiche(obj){
     // On ajoute à Box le contenu html de obj 
     Box.innerHTML = obj.createElement();
+
+    /*typeWritter(Box, obj.getMsg());
+    Box.innerHTML += obj.addImage();*/
     // On applique le display flex à msgBox
     msgBox.style.display = 'flex';
     // On fait apparaitre en transition Box
@@ -71,15 +74,17 @@ function init() {
 }
 
 function afficheFantome(){
-    // On fait apparaitre les textes 0 et 4
-    annecdotes[0].style.opacity = '1';
-    annecdotes[4].style.opacity = '1';
+    // On fait apparaitre les textes
+    annecdotes.forEach(c => {
+        c.style.opacity = '1';
+    });
 }
 
 function removeFantome(){
-    // On fait disparaitre les textes 0 et 4
-    annecdotes[0].style.opacity = '0';
-    annecdotes[4].style.opacity = '0';
+    // On fait disparaitre les textes
+    annecdotes.forEach(c => {
+        c.style.opacity = '0';
+    });
 }
 
 window.addEventListener('DOMContentLoaded', init);
